@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648169215615",
+    "project_id": "devt-32a31",
+    "storage_bucket": "devt-32a31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648169215615:android:2d1dacade44bb66164514a",
+        "android_client_info": {
+          "package_name": "com.example.devt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648169215615-59cnmvbamj4ra8boq71gik9fgm7ghnch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGlbxFkvYKcBV6NiRIwFHX9ftMigMJoxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648169215615-59cnmvbamj4ra8boq71gik9fgm7ghnch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

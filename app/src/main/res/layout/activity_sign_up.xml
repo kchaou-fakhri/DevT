@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+
+    <ImageView
+        android:id="@+id/uplogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/log"
+        android:transitionName="mlogo"
+        />
+
+    <TextView
+        android:id="@+id/uptextlogo"
+        android:transitionName="textlogo"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="Welecome"
+        android:textSize="40sp"
+        android:textColor="#000"
+
+        />
+
+    <TextView
+        android:id="@+id/upslogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up to start your new Journey"
+        android:textSize="18sp"
+
+
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        3
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newusername"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="E-mail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newemail"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:passwordToggleEnabled="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/newpassword"
+
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingTop="15dp">
+
+    <RadioButton
+        android:id="@+id/employeur"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:text="Employeur" />
+
+    <RadioButton
+        android:id="@+id/employee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employee" />
+
+
+
+
+</LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GO"
+            android:background="#000"
+            android:textColor="#FFF"
+            android:id="@+id/createNew"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <Button
+            android:layout_width="250dp"
+            android:id="@+id/exist"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:textColor="#000"
+            android:text="Already have an account? LogIn "
+
+            android:elevation="0dp"
+            android:layout_margin="5dp"
+
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
