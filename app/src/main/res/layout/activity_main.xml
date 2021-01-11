@@ -26,7 +26,7 @@
         android:layout_width="335dp"
         android:layout_height="87dp"
         android:fontFamily="@font/bangers"
-        android:text=" Creative team"
+        android:text="Arvaty"
         android:textAlignment="center"
         android:transitionName="textlogo"
         android:textColor="#fff"
