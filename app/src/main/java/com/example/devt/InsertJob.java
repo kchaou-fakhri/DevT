@@ -39,7 +39,7 @@ public class InsertJob extends AppCompatActivity {
 
                 // Write a message to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("job");
+                DatabaseReference myRef = database.getReference("Job");
 
 
 

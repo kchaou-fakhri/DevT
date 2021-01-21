@@ -8,6 +8,7 @@ public class Job {
                 private String location;
                 private String filde;
                 private String budget;
+                 private String mail;
 
     public Job( String title, String description, String location, String filde, String budget) {
 
@@ -18,6 +19,15 @@ public class Job {
         this.budget = budget;
     }
 
+    public Job( String title, String description, String location, String filde, String budget, String mail) {
+
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.filde = filde;
+        this.budget = budget;
+        this.mail = mail;
+    }
     public String getDescription() {
         return description;
     }
@@ -64,5 +74,13 @@ public class Job {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

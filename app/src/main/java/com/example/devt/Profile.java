@@ -10,19 +10,12 @@ import android.widget.ImageView;
 public class Profile extends AppCompatActivity {
 
     ImageView img;
+    ImageView img2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        img = findViewById(R.id.btnk);
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, InsertJob.class);
-                startActivity(intent);
-            }
-        });
     }
 }
