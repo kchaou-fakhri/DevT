@@ -23,20 +23,24 @@
             android:background="@drawable/circle_border">
 
             <ImageView
-
+                android:id="@+id/profile_image"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_margin="9dp"
                 android:adjustViewBounds="true"
-                android:background="@drawable/circle"
+
                 android:padding="3dp"
+
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_user" />
+                android:src="@drawable/cus3"
+                android:background="@drawable/circle"/>
 
         </RelativeLayout>
 
+
+
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/profile_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgUser"
@@ -44,6 +48,7 @@
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
             android:text="Joey Tribbiani"
+
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -52,10 +57,10 @@
             android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
+            android:layout_below="@+id/profile_username"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            android:text="new york, usa"
+            android:text="Mahdia, TN"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -185,6 +190,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                  android:id="@+id/profile_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -238,11 +244,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Twitter"
+                    android:text="Type"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profile_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
@@ -272,6 +279,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/profile_facebook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"

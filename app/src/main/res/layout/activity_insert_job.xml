@@ -108,7 +108,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+
                 android:id="@+id/field"
 
 
@@ -130,7 +130,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+
                 android:id="@+id/location"
 
 
@@ -143,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="Budget"
+            android:hint="Email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
             >
@@ -152,7 +152,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
+
                 android:id="@+id/budget"
 
 

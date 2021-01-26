@@ -49,7 +49,8 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_cycle"
+                            android:src="@drawable/ic_listjob"
+
                             app:tint="@color/white" />
 
                         <TextView
@@ -87,7 +88,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_users"
+                            android:src="@drawable/ic_addjob"
                             app:tint="@color/white" />
 
                         <TextView
@@ -95,7 +96,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView2"
                             android:layout_centerHorizontal="true"
-                            android:text="Friends List"
+                            android:text="Add new Job"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -112,7 +113,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/rellay_chat"
+                    android:id="@+id/profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.55"
@@ -133,7 +134,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_chat"
+                            android:src="@drawable/ic_profile"
                             app:tint="@color/white" />
 
                         <TextView
@@ -141,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView3"
                             android:layout_centerHorizontal="true"
-                            android:text="Chat"
+                            android:text="Profile"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -150,7 +151,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/profile"
+                    android:id="@+id/edit_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.65"
@@ -171,7 +172,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_users"
+                            android:src="@drawable/ic_edit"
                             app:tint="@color/white" />
 
                         <TextView
@@ -179,7 +180,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView4"
                             android:layout_centerHorizontal="true"
-                            android:text="Music"
+                            android:text="Edit Profile"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -217,7 +218,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_gallery"
+                            android:src="@drawable/ic_baseline_error_24"
                             app:tint="@color/white" />
 
                         <TextView
@@ -225,7 +226,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView5"
                             android:layout_centerHorizontal="true"
-                            android:text="Gallery"
+                            android:text="Vide"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -255,7 +256,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_map"
+                            android:src="@drawable/ic_baseline_error_24"
                             app:tint="@color/white" />
 
                         <TextView
@@ -263,7 +264,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView6"
                             android:layout_centerHorizontal="true"
-                            android:text="Map"
+                            android:text="vide"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -280,7 +281,7 @@
                 android:layout_weight="1">
 
                 <RelativeLayout
-                    android:id="@+id/rellay_weather"
+                    android:id="@+id/settingsmenu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.55"
@@ -301,7 +302,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_weather"
+                            android:src="@drawable/ic_settings"
                             app:tint="@color/white" />
 
                         <TextView
@@ -309,7 +310,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView7"
                             android:layout_centerHorizontal="true"
-                            android:text="Weather"
+                            android:text="Setting"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 
@@ -318,7 +319,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rellay_settings"
+                    android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.65"
@@ -339,7 +340,7 @@
                             android:adjustViewBounds="true"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/ic_settings"
+                            android:src="@drawable/ic_exit"
                             app:tint="@color/white" />
 
                         <TextView
@@ -347,7 +348,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imgView8"
                             android:layout_centerHorizontal="true"
-                            android:text="Settings"
+                            android:text="Logout"
                             android:layout_marginTop="5dp"
                             android:textSize="14sp" />
 

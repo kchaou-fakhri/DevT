@@ -78,12 +78,17 @@ public class SignUp extends AppCompatActivity {
                    password.setError("password Must be >=6 Charactere ");
                     return;
                 }
-                FirebaseAuth fAuth = FirebaseAuth.getInstance();
+                final FirebaseAuth fAuth = FirebaseAuth.getInstance();
                 fAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
+
+
+                            CreateUser(fAuth);
+
+
                             Toast.makeText(SignUp.this, "User created", Toast.LENGTH_SHORT).show();
 
                         } else {
@@ -98,29 +103,37 @@ public class SignUp extends AppCompatActivity {
 
 
                 // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("users");
 
-                String type = "";
-                if(employee.isChecked())
-                {
-                    type = "employee";
-                }
-                else
-                {
-                    type = "employeur";
-                }
-
-              User user =  new User(username.getText().toString(), email.getText().toString(), password.getText().toString(), type);
-
-                myRef.child(user.getUsername()+user.getPassword()+user.getType()).setValue(user);
-                Intent intent = new Intent(SignUp.this, Login.class);
-                startActivity(intent);
            }
         });
 
 
 
 
+    }
+
+
+    public void CreateUser(FirebaseAuth fAuth)
+    {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("users");
+
+        String type = "";
+        if(employee.isChecked())
+        {
+            type = "employee";
+        }
+        else
+        {
+            type = "employeur";
+        }
+
+        User user =  new User(username.getText().toString(), email.getText().toString(), password.getText().toString(), type);
+
+        myRef.child(fAuth.getCurrentUser().getUid()).setValue(user);
+        Intent intent = new Intent(SignUp.this, Login.class);
+
+        startActivity(intent);
     }
 }

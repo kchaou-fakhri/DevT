@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateUser"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/mlogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/log"
+        android:transitionName="mlogo"
+        />
+
+    <TextView
+        android:id="@+id/textlogo"
+        android:transitionName="textlogo"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="change !\nyour profile picture"
+        android:textSize="40sp"
+        android:textColor="#000"
+
+        />
+
+    <TextView
+        android:id="@+id/slogen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to continue"
+        android:textSize="18sp"
+
+
+        />
+
+
+
+    <ImageView
+        android:id="@+id/userimage"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+
+        android:layout_marginTop="20dp"
+        android:paddingBottom="30dp"
+        android:src="@drawable/addimage"
+        android:transitionName="mlogo" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:background="#000"
+            android:textColor="#FFF"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btnNext"
+            />
+
+
+
+
+</LinearLayout>
+

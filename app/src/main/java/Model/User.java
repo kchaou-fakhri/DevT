@@ -14,6 +14,10 @@ public class User {
         this.type = type;
     }
 
+    public User() {
+
+    }
+
     public String getUsername() {
         return username;
     }

@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Menu"></activity>
+        <activity android:name=".UpdateUser"></activity>
+        <activity android:name=".Menu" />
         <activity android:name=".PageDetaile" />
         <activity android:name=".Emp" />
         <activity android:name=".InsertJob" />
         <activity android:name=".Profile" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
+        <activity android:name=".forgetpassword"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

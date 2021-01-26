@@ -1,17 +1,24 @@
 package com.example.devt;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.SearchView;
-import android.widget.Spinner;
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,17 +26,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-import Model.Job;
+import Model.job;
 
 public class Emp extends AppCompatActivity {
     //references to database
 
     //list of
-    ArrayList<Job> array = new ArrayList<Job>();
+    ArrayList<job> array = new ArrayList<job>();
 
     //list of jobs
-    ArrayList<Job> arrayjob=new ArrayList<Job>();
+    ArrayList<job> arrayjob=new ArrayList<job>();
     //list of ville
     ArrayList<String> arrayville = new ArrayList<>();
     ArrayAdapter<String> adapterville;
@@ -67,42 +78,42 @@ public class Emp extends AppCompatActivity {
 
     public void ReadElement()
     {
-       reff.addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot)
-           {
-               arrayjob.clear();
-               for(DataSnapshot key : snapshot.getChildren())
-               {
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot)
+            {
+                arrayjob.clear();
+                for(DataSnapshot key : snapshot.getChildren())
+                {
 
-                     Job joub=key.getValue(Job.class);
-                     arrayjob.add(joub);
-                     if(!arrayville.contains(joub.getLocation()))
-                     {
-                         arrayville.add(joub.getLocation());
+                    job joub=key.getValue(job.class);
+                    arrayjob.add(joub);
+                    if(!arrayville.contains(joub.getVille()))
+                    {
+                        arrayville.add(joub.getVille());
 
-                     }
-                     if(!arraydomaine.contains((joub.getFilde())))
-                     {
-                         arraydomaine.add(joub.getFilde());
-                     }
+                    }
+                    if(!arraydomaine.contains((joub.getDomaine())))
+                    {
+                        arraydomaine.add(joub.getDomaine());
+                    }
 
 
-               }
-               adapterville.notifyDataSetChanged();
-               adapterdomaine.notifyDataSetChanged();
-               RecyclerView li = findViewById(R.id.rec);
-               ClassAdapt cls = new ClassAdapt(arrayjob, Emp.this);
-               li.setAdapter(cls);
-               li.setLayoutManager(new LinearLayoutManager(Emp.this));
+                }
+                adapterville.notifyDataSetChanged();
+                adapterdomaine.notifyDataSetChanged();
+                RecyclerView li = findViewById(R.id.rec);
+                ClassAdapt cls = new ClassAdapt(arrayjob, Emp.this);
+                li.setAdapter(cls);
+                li.setLayoutManager(new LinearLayoutManager(Emp.this));
 
-           }
+            }
 
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-           }
-       });
+            }
+        });
 
 
         spinnerville.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -113,8 +124,8 @@ public class Emp extends AppCompatActivity {
                     String ville = parent.getItemAtPosition(position).toString();
                     array.clear();
                     for (int i = 0; i < arrayjob.size(); i++) {
-                        if(arrayjob.get(i).getLocation().equals(ville)) {
-                            Job jobrecherche=arrayjob.get(i);
+                        if(arrayjob.get(i).getVille().equals(ville)) {
+                            job jobrecherche=arrayjob.get(i);
                             array.add(jobrecherche);
                             RecyclerView li = findViewById(R.id.rec);
                             ClassAdapt cls = new ClassAdapt(array, Emp.this);
@@ -132,7 +143,7 @@ public class Emp extends AppCompatActivity {
                     li.setLayoutManager(new LinearLayoutManager(Emp.this));
                 }
 
-                }
+            }
 
 
             @Override
@@ -150,7 +161,7 @@ public class Emp extends AppCompatActivity {
                     String domaine = parent.getItemAtPosition(position).toString();
                     array.clear();
                     for (int i = 0; i < arrayjob.size(); i++) {
-                        if(arrayjob.get(i).getFilde().equals(domaine)) {
+                        if(arrayjob.get(i).getDomaine().equals(domaine)) {
                             array.add(arrayjob.get(i));
                             RecyclerView li = findViewById(R.id.rec);
                             ClassAdapt cls = new ClassAdapt(array, Emp.this);
@@ -167,9 +178,9 @@ public class Emp extends AppCompatActivity {
                     li.setAdapter(cls);
                     li.setLayoutManager(new LinearLayoutManager(Emp.this));
 
-                    }
-
                 }
+
+            }
 
 
 

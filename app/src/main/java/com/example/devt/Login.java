@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
@@ -24,10 +26,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
 
     ImageView image;
-    Button btnsign, btnLogin;
+    Button btnsign, btnLogin, btnForget;
     TextView tv1, tv2;
     TextInputLayout email, password;
     FirebaseAuth fAuth;
+    SharedPreferences  prefrenaceUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class Login extends AppCompatActivity {
         image = findViewById(R.id.mlogo);
         btnsign = findViewById(R.id.create);
         btnLogin = findViewById(R.id.btnlogin);
+        btnForget = findViewById(R.id.forget);
+
         tv1 = findViewById(R.id.textlogo);
         tv2 = findViewById(R.id.slogen);
         email = findViewById(R.id.username);
@@ -45,6 +50,25 @@ public class Login extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
 
 
+        btnForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), forgetpassword.class));
+            }
+        });
+
+
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("userPref", Context.MODE_PRIVATE);
+
+        String UserTest = sharedPreferences.getString("email", "");
+        if(UserTest != "")
+        {
+
+            Toast.makeText(Login.this, UserTest , Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(getApplicationContext(), Menu.class));
+        }
+        else
 
 
         btnsign.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +96,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String validationEmail = String.valueOf(email.getEditText().getText());
+                final String validationEmail = String.valueOf(email.getEditText().getText());
                 String validationPassword = String.valueOf(password.getEditText().getText());
                 if (TextUtils.isEmpty(validationEmail)) {
                     email.setError("email is required");
@@ -92,6 +116,15 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
+                            //***********Create session with sharedPrefreance
+                            prefrenaceUser =getSharedPreferences("userPref", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefrenaceUser.edit();
+                            editor.putString("email",validationEmail);
+                            editor.putString("userId",fAuth.getCurrentUser().getUid());
+
+                            editor.commit();
+
                             Toast.makeText(Login.this, "User connected", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), Menu.class));
 

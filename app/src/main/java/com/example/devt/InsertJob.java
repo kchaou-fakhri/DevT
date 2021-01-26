@@ -2,7 +2,8 @@ package com.example.devt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +13,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import Model.Job;
-import Model.User;
+import java.util.Date;
+
+import Model.job;
 
 public class InsertJob extends AppCompatActivity {
 
@@ -33,20 +35,25 @@ public class InsertJob extends AppCompatActivity {
         submit = findViewById(R.id.createJob);
 
 
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // Write a message to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Job");
+                DatabaseReference myRef = database.getReference("job");
+
+                //get id of user to create jobId
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("userPref", Context.MODE_PRIVATE);
+
+                String UserId= sharedPreferences.getString("userId", "");
 
 
+                job Job = new job(description.getText().toString(),  field.getText().toString(), budget.getText().toString(), title.getText().toString(),location.getText().toString()
+             ,UserId );
 
-              Job job = new Job(title.getText().toString(),description.getText().toString(),location.getText().toString(), field.getText().toString()
-              ,budget.getText().toString());
-
-                myRef.child(job.getTitle() + job.getDescription()+ job.getFilde()+job.getLocation()+ job.getBudget()).setValue(job);
+               myRef.child(UserId+"_"+time()).setValue(Job);
 
                     Toast.makeText(InsertJob.this, "Job created", Toast.LENGTH_SHORT).show();
 
@@ -59,4 +66,11 @@ public class InsertJob extends AppCompatActivity {
 
 
     }
+
+    private String time()
+    {
+
+        return String.valueOf((new Date().getTime()));
+    }
+
 }
